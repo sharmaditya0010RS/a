@@ -1,0 +1,30 @@
+
+[build-system]
+requires = ["setuptools==75.6.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "financial-crime-intelligence"
+version = "0.1.0"
+description = "Enterprise Financial Crime Intelligence and Banking Risk Analytics Platform"
+requires-python = ">=3.12,<3.13"
+dynamic = ["dependencies"]
+
+[tool.setuptools]
+packages = ["src", "src.common", "src.ingestion", "src.validation", "src.transformation", "src.analytics", "src.reporting", "streamlit_app", "streamlit_app.components", "streamlit_app.services"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+exclude = [".venv", "data", "notebooks"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

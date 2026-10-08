@@ -1,0 +1,25 @@
+
+services:
+  postgres:
+    image: postgres:16.6
+    container_name: fci_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DATABASE_USER:-aml_user}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-aml_local_password}
+      POSTGRES_DB: ${DATABASE_NAME:-aml_analytics}
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
+volumes:
+  postgres_data:

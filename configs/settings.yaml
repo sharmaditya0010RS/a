@@ -1,0 +1,30 @@
+
+project:
+  name: Global Financial Crime Intelligence
+  version: 0.1.0
+  domain: Banking and Financial Crime
+  environment: development
+
+pipeline:
+  batch_size: 100000
+  source_format: csv
+  raw_schema: bronze
+  staging_schema: silver
+  analytics_schema: gold
+
+data_quality:
+  fail_on_missing_columns: true
+  fail_on_invalid_types: true
+  fail_on_negative_amounts: true
+  allowed_laundering_labels:
+    - 0
+    - 1
+
+reporting:
+  default_currency: USD
+  allow_mixed_currency_aggregation: false
+  dashboard_refresh_minutes: 5
+
+logging:
+  level: INFO
+  directory: logs
