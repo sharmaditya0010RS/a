@@ -1,0 +1,254 @@
+{
+  "dataset_name": "HI-Small_Trans.csv",
+  "source_path": "data/raw/HI-Small_Trans.csv",
+  "file_size_bytes": 475664283,
+  "sha256": "b19d39f515523373f991b689c07e11e7b0b95c17a2c27a87d91584ae16c5b040",
+  "profiled_at_utc": "2026-10-08T16:30:16.258941+00:00",
+  "row_count": 5078345,
+  "column_count": 11,
+  "columns": [
+    "Timestamp",
+    "From Bank",
+    "Account",
+    "To Bank",
+    "Account.1",
+    "Amount Received",
+    "Receiving Currency",
+    "Amount Paid",
+    "Payment Currency",
+    "Payment Format",
+    "Is Laundering"
+  ],
+  "chunk_size": 100000,
+  "field_profiles": [
+    {
+      "column": "Timestamp",
+      "inferred_type": "datetime_candidate",
+      "missing_count": 0,
+      "nonempty_count": 5078345,
+      "missing_percentage": 0.0,
+      "sample_distinct_count": 10000,
+      "sample_distinct_count_capped": true,
+      "sample_values": [
+        "2022/09/01 00:00",
+        "2022/09/01 00:01",
+        "2022/09/01 00:02",
+        "2022/09/01 00:03",
+        "2022/09/01 00:04",
+        "2022/09/01 00:05",
+        "2022/09/01 00:06",
+        "2022/09/01 00:07",
+        "2022/09/01 00:08",
+        "2022/09/01 00:09"
+      ]
+    },
+    {
+      "column": "From Bank",
+      "inferred_type": "integer_candidate",
+      "missing_count": 0,
+      "nonempty_count": 5078345,
+      "missing_percentage": 0.0,
+      "sample_distinct_count": 10000,
+      "sample_distinct_count_capped": true,
+      "sample_values": [
+        "001",
+        "0010057",
+        "0010060",
+        "0010099",
+        "0010232",
+        "001024",
+        "0010344",
+        "0010404",
+        "0010441",
+        "001047"
+      ]
+    },
+    {
+      "column": "Account",
+      "inferred_type": "string",
+      "missing_count": 0,
+      "nonempty_count": 5078345,
+      "missing_percentage": 0.0,
+      "sample_distinct_count": 10000,
+      "sample_distinct_count_capped": true,
+      "sample_values": [
+        "100428660",
+        "800042CB0",
+        "800042E70",
+        "800043210",
+        "800043990",
+        "800043C00",
+        "800052F90",
+        "800054B70",
+        "8000551B0",
+        "800055A70"
+      ]
+    },
+    {
+      "column": "To Bank",
+      "inferred_type": "integer_candidate",
+      "missing_count": 0,
+      "nonempty_count": 5078345,
+      "missing_percentage": 0.0,
+      "sample_distinct_count": 10000,
+      "sample_distinct_count_capped": true,
+      "sample_values": [
+        "001",
+        "0010",
+        "0010057",
+        "0010060",
+        "0010099",
+        "0010232",
+        "001024",
+        "0010344",
+        "0010404",
+        "0010441"
+      ]
+    },
+    {
+      "column": "Account.1",
+      "inferred_type": "string",
+      "missing_count": 0,
+      "nonempty_count": 5078345,
+      "missing_percentage": 0.0,
+      "sample_distinct_count": 10000,
+      "sample_distinct_count_capped": true,
+      "sample_values": [
+        "800042E70",
+        "800043990",
+        "800043C00",
+        "800052F90",
+        "800054B70",
+        "8000551B0",
+        "800055A70",
+        "800056160",
+        "800056370",
+        "800056660"
+      ]
+    },
+    {
+      "column": "Amount Received",
+      "inferred_type": "decimal_candidate",
+      "missing_count": 0,
+      "nonempty_count": 5078345,
+      "missing_percentage": 0.0,
+      "sample_distinct_count": 10000,
+      "sample_distinct_count_capped": true,
+      "sample_values": [
+        "0.01",
+        "0.016891",
+        "0.02",
+        "0.025852",
+        "0.03",
+        "0.037374",
+        "0.04",
+        "0.045449",
+        "0.05",
+        "0.07"
+      ]
+    },
+    {
+      "column": "Receiving Currency",
+      "inferred_type": "string",
+      "missing_count": 0,
+      "nonempty_count": 5078345,
+      "missing_percentage": 0.0,
+      "sample_distinct_count": 15,
+      "sample_distinct_count_capped": false,
+      "sample_values": [
+        "Australian Dollar",
+        "Bitcoin",
+        "Brazil Real",
+        "Canadian Dollar",
+        "Euro",
+        "Mexican Peso",
+        "Ruble",
+        "Rupee",
+        "Saudi Riyal",
+        "Shekel"
+      ]
+    },
+    {
+      "column": "Amount Paid",
+      "inferred_type": "decimal_candidate",
+      "missing_count": 0,
+      "nonempty_count": 5078345,
+      "missing_percentage": 0.0,
+      "sample_distinct_count": 10000,
+      "sample_distinct_count_capped": true,
+      "sample_values": [
+        "0.01",
+        "0.016891",
+        "0.02",
+        "0.025852",
+        "0.03",
+        "0.037374",
+        "0.04",
+        "0.045449",
+        "0.05",
+        "0.07"
+      ]
+    },
+    {
+      "column": "Payment Currency",
+      "inferred_type": "string",
+      "missing_count": 0,
+      "nonempty_count": 5078345,
+      "missing_percentage": 0.0,
+      "sample_distinct_count": 15,
+      "sample_distinct_count_capped": false,
+      "sample_values": [
+        "Australian Dollar",
+        "Bitcoin",
+        "Brazil Real",
+        "Canadian Dollar",
+        "Euro",
+        "Mexican Peso",
+        "Ruble",
+        "Rupee",
+        "Saudi Riyal",
+        "Shekel"
+      ]
+    },
+    {
+      "column": "Payment Format",
+      "inferred_type": "string",
+      "missing_count": 0,
+      "nonempty_count": 5078345,
+      "missing_percentage": 0.0,
+      "sample_distinct_count": 7,
+      "sample_distinct_count_capped": false,
+      "sample_values": [
+        "ACH",
+        "Bitcoin",
+        "Cash",
+        "Cheque",
+        "Credit Card",
+        "Reinvestment",
+        "Wire"
+      ]
+    },
+    {
+      "column": "Is Laundering",
+      "inferred_type": "integer_candidate",
+      "missing_count": 0,
+      "nonempty_count": 5078345,
+      "missing_percentage": 0.0,
+      "sample_distinct_count": 2,
+      "sample_distinct_count_capped": false,
+      "sample_values": [
+        "0",
+        "1"
+      ]
+    }
+  ],
+  "profiling_limitations": [
+    "All columns were read as strings to preserve source values.",
+    "Type inference is provisional and not a database schema.",
+    "Distinct counts are capped samples, not exact cardinalities.",
+    "Empty strings are treated as missing.",
+    "Duplicate rows have not yet been measured.",
+    "Timestamp parsing does not establish source timezone.",
+    "No AML label semantics are assumed."
+  ]
+}

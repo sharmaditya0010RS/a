@@ -1,0 +1,70 @@
+{
+  "dataset_name": "HI-Small_Trans.csv",
+  "audited_at_utc": "2026-10-08T16:50:11.118396+00:00",
+  "row_count": 5078345,
+  "duplicate_fingerprint_candidates": 9,
+  "unique_row_fingerprints": 5078336,
+  "earliest_timestamp": "2022-09-01 00:00:00",
+  "latest_timestamp": "2022-09-18 16:18:00",
+  "invalid_timestamp_count": 0,
+  "invalid_amount_counts": {},
+  "negative_amount_counts": {},
+  "zero_amount_counts": {},
+  "aml_label_distribution": {
+    "0": 5073168,
+    "1": 5177
+  },
+  "payment_format_distribution": {
+    "ACH": 600797,
+    "Bitcoin": 146091,
+    "Cash": 490891,
+    "Cheque": 1864331,
+    "Credit Card": 1323324,
+    "Reinvestment": 481056,
+    "Wire": 171855
+  },
+  "receiving_currency_distribution": {
+    "Australian Dollar": 138511,
+    "Bitcoin": 148151,
+    "Brazil Real": 71544,
+    "Canadian Dollar": 141357,
+    "Euro": 1172017,
+    "Mexican Peso": 111030,
+    "Ruble": 157361,
+    "Rupee": 192065,
+    "Saudi Riyal": 89971,
+    "Shekel": 194988,
+    "Swiss Franc": 237884,
+    "UK Pound": 181255,
+    "US Dollar": 1879341,
+    "Yen": 156319,
+    "Yuan": 206551
+  },
+  "payment_currency_distribution": {
+    "Australian Dollar": 136769,
+    "Bitcoin": 146066,
+    "Brazil Real": 70703,
+    "Canadian Dollar": 140042,
+    "Euro": 1168297,
+    "Mexican Peso": 110159,
+    "Ruble": 155178,
+    "Rupee": 190202,
+    "Saudi Riyal": 89014,
+    "Shekel": 192184,
+    "Swiss Franc": 234860,
+    "UK Pound": 180738,
+    "US Dollar": 1895172,
+    "Yen": 155209,
+    "Yuan": 213752
+  },
+  "same_bank_transaction_count": 691255,
+  "same_account_transaction_count": 591212,
+  "limitations": [
+    "Duplicate candidates are based on SHA-256 row fingerprints.",
+    "Repeated source rows are not automatically invalid.",
+    "Timestamp timezone is unknown.",
+    "AML labels are synthetic annotations.",
+    "Same-account matching uses bank and account identifiers.",
+    "Monetary totals across currencies are not calculated."
+  ]
+}
