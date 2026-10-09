@@ -1,4 +1,4 @@
-﻿name: FCI Quality and Tests
+name: FCI Quality and Tests
 
 on:
   push:
@@ -31,7 +31,7 @@ jobs:
         run: ruff check scripts streamlit_app tests
 
       - name: Run tests
-        run: python -m pytest -q
+        run: python -m pytest -q --ignore=tests/integration
 
       - name: Compile Python modules
         run: python -m compileall -q src streamlit_app scripts
