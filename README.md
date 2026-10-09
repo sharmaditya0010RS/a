@@ -1,4 +1,8 @@
-# 🛡️ Global Financial Crime Intelligence
+<p align="center">
+  <img src="assets/fci-hero.png" alt="Financial Crime Intelligence platform overview" width="100%">
+</p>
+
+# Global Financial Crime Intelligence
 ### Banking Risk & Investigation Command Center
 
 **An end-to-end financial crime analytics platform built with Python, PostgreSQL, SQLAlchemy, Streamlit, Docker and GitHub Actions.**
