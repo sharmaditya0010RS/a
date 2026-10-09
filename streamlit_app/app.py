@@ -1,38 +1,157 @@
+from __future__ import annotations
 
 import streamlit as st
 
-from src.common.config import get_settings
-from src.common.database import check_database_connection
+from streamlit_app.db import health_check
+from streamlit_app.theme import apply_styles
+
+# ============================================================
+# APPLICATION CONFIGURATION
+# ============================================================
 
 st.set_page_config(
-    page_title="Financial Crime Intelligence",
-    page_icon="🏦",
+    page_title="FCI | Financial Crime Command Center",
+    page_icon="🛡️",
     layout="wide",
+    initial_sidebar_state="expanded",
 )
 
-settings = get_settings()
+apply_styles()
 
-st.title("Global Financial Crime Intelligence")
-st.subheader("Enterprise Banking Risk Command Center")
 
-st.caption(f"Environment: {settings.app_env}")
-st.caption(f"Platform Version: {settings.app_version}")
+# ============================================================
+# SIDEBAR BRANDING AND SYSTEM STATUS
+# ============================================================
 
-st.divider()
+with st.sidebar:
+    st.markdown("## FCI COMMAND")
 
-col1, col2, col3 = st.columns(3)
+    st.caption(
+        "FINANCIAL CRIME INTELLIGENCE"
+    )
 
-with col1:
-    st.metric("Platform", "Initialized")
+    st.divider()
 
-with col2:
-    st.metric("Pipeline", "Not Started")
+    st.markdown("**SYSTEM STATUS**")
 
-with col3:
     try:
-        healthy = check_database_connection()
-        st.metric("Database", "Connected" if healthy else "Disconnected")
+        database_connected = health_check()
     except Exception:
-        st.metric("Database", "Disconnected")
+        database_connected = False
 
-st.info("Phase 0: Infrastructure and environment initialization")
+    if database_connected:
+        st.success("PostgreSQL - Connected")
+    else:
+        st.error("PostgreSQL - Disconnected")
+
+        st.info(
+            "Start the PostgreSQL Docker container "
+            "and verify your database configuration."
+        )
+
+        st.stop()
+
+    st.caption(
+        "Source: PostgreSQL analytical warehouse"
+    )
+
+    st.caption(
+        "Environment: Synthetic AML research"
+    )
+
+    st.caption(
+        "Access: Read-only dashboard"
+    )
+
+    st.divider()
+
+    if st.button(
+        "Refresh dashboard data",
+        use_container_width=True,
+        type="primary",
+    ):
+        st.cache_data.clear()
+        st.rerun()
+
+    st.divider()
+
+    st.markdown("**PLATFORM MODULES**")
+
+    st.caption(
+        "Monitoring | Investigations | "
+        "Entity Intelligence | Governance"
+    )
+
+    st.divider()
+
+    st.caption(
+        "FCI ANALYTICS PLATFORM"
+    )
+
+    st.caption(
+        "Portfolio research environment"
+    )
+
+    st.caption(
+        "Not a production financial-crime "
+        "decision system"
+    )
+
+
+# ============================================================
+# ENTERPRISE MULTIPAGE NAVIGATION
+# ============================================================
+
+pages = {
+    "COMMAND CENTER": [
+        st.Page(
+            "pages/executive.py",
+            title="Executive Overview",
+            icon="📊",
+            default=True,
+        ),
+    ],
+    "INVESTIGATIONS": [
+        st.Page(
+            "pages/investigations.py",
+            title="Alert Investigation",
+            icon="🚨",
+        ),
+        st.Page(
+            "pages/workbench.py",
+            title="Advanced Investigation",
+            icon="🔎",
+        ),
+    ],
+    "ENTITY INTELLIGENCE": [
+        st.Page(
+            "pages/entities.py",
+            title="Entity Risk Intelligence",
+            icon="🌐",
+        ),
+    ],
+    "GOVERNANCE & CONTROL": [
+        st.Page(
+            "pages/detection.py",
+            title="Detection Performance",
+            icon="📈",
+        ),
+        st.Page(
+            "pages/operations.py",
+            title="Data Quality & Operations",
+            icon="🗃️",
+        ),
+    ],
+}
+
+
+# ============================================================
+# RUN SELECTED PAGE
+# ============================================================
+
+navigation = st.navigation(
+    pages,
+    position="sidebar",
+)
+
+navigation.run()
